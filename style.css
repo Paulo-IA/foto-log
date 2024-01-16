@@ -150,6 +150,8 @@ main {
   aspect-ratio: 16/9;
   object-fit: cover;
 
+  display: block;
+
   /* transition-property: all;
   transition-duration: 300ms;
   transition-delay: 0;
@@ -198,4 +200,36 @@ footer p {
   text-align: center;
   padding: 1.6rem;
   font-weight: 600;
+}
+
+/* animations */
+header {
+  --startY: -100%;
+  animation: move 0.2s;
+}
+footer {
+  --startY: 100%;
+  animation: move 0.2s reverse;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(var(--startY));
+  }
+}
+
+.item {
+  --delay: 0.4s;
+  animation: appear 0.4s var(--delay) backwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  0% {
+    transform: scale(1.2);
+  }
 }
